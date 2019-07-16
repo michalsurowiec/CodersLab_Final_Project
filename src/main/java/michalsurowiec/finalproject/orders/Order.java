@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -21,7 +22,6 @@ public class Order {
     @JoinTable(name = "order_product",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
-    @NotNull
     private Set<Product> productSet = new HashSet<>();
     @NotNull
     @Min(1)
@@ -45,10 +45,6 @@ public class Order {
     @PrePersist
     public void prePersist() {
         created = LocalDateTime.now();
-    }
-
-    @PrePersist
-    public void prePersistPayment(){
         paymentDate = LocalDateTime.now().plusWeeks(1);
     }
 

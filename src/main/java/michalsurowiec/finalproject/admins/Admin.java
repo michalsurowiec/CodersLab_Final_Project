@@ -24,5 +24,4 @@ public class Admin {
     @Pattern(regexp = "^[a-zA-ZĄ-ćĘęŁ-ńÓóŚśŹ-ż]*$")
     @NotNull
     private String surname;
-    private boolean superadmin = false;
 }
