@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+//Dokonać walidacji Category Controller
 @Controller
 @RequestMapping("/admin/category")
 public class CategoryController {

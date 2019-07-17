@@ -28,6 +28,11 @@ public class Category {
                 '}';
     }
 
+    //    @Override
+//    public String toString() {
+//        return name;
+//    }
+
     public Long getId() {
         return id;
     }
