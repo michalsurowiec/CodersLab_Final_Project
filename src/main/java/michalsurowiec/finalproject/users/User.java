@@ -4,10 +4,7 @@ import michalsurowiec.finalproject.orders.Order;
 import michalsurowiec.finalproject.roles.Role;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,30 +14,29 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @NotBlank
     @Email
     private String email;
-    @NotNull
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W])(?=.*[\\d])(?=.{8,}).*$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W])(?=.*[\\d])(?=.{8,}).*$",
+            message = "Niepoprawne hasło! Upewnij się, że wpisałeś zgodnie z instrukcją")
     private String password;
-    @NotNull
+    @NotBlank
     @Pattern(regexp = "^[a-zA-ZĄ-ćĘęŁ-ńÓóŚśŹ-ż]*$")
     private String name;
     @Pattern(regexp = "^[a-zA-ZĄ-ćĘęŁ-ńÓóŚśŹ-ż]*$")
-    @NotNull
+    @NotBlank
     private String surname;
     @Pattern(regexp = "^\\d{2}-\\d{3}$")
-    @NotNull
     private String postalCode;
+    @NotBlank
     @Pattern(regexp = "^[a-zA-ZĄ-ćĘęŁ-ńÓóŚśŹ-ż]*$")
-    @NotNull
     private String city;
-    @NotNull
+    @NotBlank
     @Pattern(regexp = "^[a-zA-ZĄ-ćĘęŁ-ńÓóŚśŹ-ż-]*$")
     private String street;
-    @NotNull
-    private int flatNumber;
-    private int localNumber;
+    @NotBlank
+    @Pattern(regexp = "^\\d+$|^\\d+\\/\\d+$")
+    private String flatNumber;
     private Long phoneNumber;
     @OneToMany(mappedBy = "user")
     private Set<Order> orderSet = new HashSet<>();
@@ -59,7 +55,6 @@ public class User {
                 ", city='" + city + '\'' +
                 ", street='" + street + '\'' +
                 ", flatNumber=" + flatNumber +
-                ", localNumber=" + localNumber +
                 ", phoneNumber=" + phoneNumber +
                 '}';
     }
@@ -128,22 +123,6 @@ public class User {
         this.street = street;
     }
 
-    public int getFlatNumber() {
-        return flatNumber;
-    }
-
-    public void setFlatNumber(int flatNumber) {
-        this.flatNumber = flatNumber;
-    }
-
-    public int getLocalNumber() {
-        return localNumber;
-    }
-
-    public void setLocalNumber(int localNumber) {
-        this.localNumber = localNumber;
-    }
-
     public Long getPhoneNumber() {
         return phoneNumber;
     }
@@ -166,5 +145,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getFlatNumber() {
+        return flatNumber;
+    }
+
+    public void setFlatNumber(String flatNumber) {
+        this.flatNumber = flatNumber;
     }
 }
