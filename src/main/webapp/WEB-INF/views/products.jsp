@@ -13,7 +13,7 @@
                 <td>${product.name}</td>
                 <td>${product.description}</td>
                 <td>${product.ean}</td>
-                <td>${product.category.name}</td>
+                <td><c:if test="${product.category != null}">${product.category.name}</c:if></td>
                 <td><a href="/admin/product/update/<c:out value="${product.id}"/>">EDYTUJ</a></td>
                 <td><a href="/admin/product/delete/<c:out value="${product.id}"/>">USUŃ</a></td>
             </tr>

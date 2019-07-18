@@ -1,6 +1,6 @@
 INSERT INTO category VALUES (null, 'Platformy zaprojektowane specjalnie do grania w gry', 'Konsole do gier')
 INSERT INTO category VALUES (null, 'Akcesoria przydatne do grania na konsole i PC', 'Akcesoria do gier')
-INSERT INTO category VALUES (null, 'Wszelkiej maści laptopy, od multimedialnych przez gamingowe do biznesowych', 'laptopy')
+INSERT INTO category VALUES (null, 'Wszelkiej maści laptopy, od multimedialnych przez gamingowe do biznesowych', 'Laptopy')
 
 INSERT INTO product VALUES (null, 'Laptop wysokiej klasy do gry', 7027461033661, 'Acer Predator X1000', 3)
 INSERT INTO product VALUES (null, 'Podręczny i lekki laptop do nauki i pracy', 2434212233730, 'ASUS 2w1 X100 Light', 3)
