@@ -14,10 +14,11 @@
                 <td>${product.description}</td>
                 <td>${product.ean}</td>
                 <td>${product.category.name}</td>
-<%--                <td><a href="/admin/category/update/<c:out value="${category.id}"/>">EDYTUJ</a></td>--%>
-<%--                <td><a href="/admin/category/delete/<c:out value="${category.id}"/>">USUŃ</a></td>--%>
+                <td><a href="/admin/product/update/<c:out value="${product.id}"/>">EDYTUJ</a></td>
+                <td><a href="/admin/product/delete/<c:out value="${product.id}"/>">USUŃ</a></td>
             </tr>
         </c:forEach>
     </table>
+    <a href="/admin">POWRÓT</a>
 </body>
 </html>

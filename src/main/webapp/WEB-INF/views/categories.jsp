@@ -17,5 +17,6 @@
         </tr>
 </c:forEach>
     </table>
+<a href="/admin">POWRÓT</a>
 </body>
 </html>

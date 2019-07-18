@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -51,6 +48,18 @@ public class ProductController {
             return "productForm";
         }
         productService.saveProduct(product);
+        return "redirect:/admin/product";
+    }
+
+    @GetMapping(path = "/update/{id}")
+    public String updateProduct(@PathVariable("id") Long id, Model model){
+        model.addAttribute("product", productService.findProductById(id));
+        return "productForm";
+    }
+
+    @GetMapping(path = "/delete/{id}")
+    public String deleteProduct(@ModelAttribute Product product){
+        productService.deleteProduct(product);
         return "redirect:/admin/product";
     }
 
