@@ -5,11 +5,13 @@ import michalsurowiec.finalproject.categories.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
@@ -44,8 +46,12 @@ public class ProductController {
     }
 
     @PostMapping(path = "/save")
-    public String saveProduct(@ModelAttribute Product product){
+    public String saveProduct(@ModelAttribute("product") @Valid Product product, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "productForm";
+        }
         productService.saveProduct(product);
         return "redirect:/admin/product";
     }
+
 }

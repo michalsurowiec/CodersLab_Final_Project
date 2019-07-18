@@ -16,7 +16,7 @@ public class Product {
     private String name;
     private String description;
     @NotNull
-    @EanValidation
+//    @EanValidation
     private Long ean;
     @ManyToOne
     private Category category;

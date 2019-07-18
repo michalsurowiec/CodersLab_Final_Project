@@ -26,8 +26,6 @@ public class UserController {
     @GetMapping(path = "/register")
     public String createUser(Model model){
         model.addAttribute("user", new User());
-        String secondPassword = "";
-        model.addAttribute("secondPassword", secondPassword);
         return "userForm";
     }
 
