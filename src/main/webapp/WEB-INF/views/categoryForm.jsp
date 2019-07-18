@@ -7,7 +7,9 @@
 <body>
     <form:form method="post" action="/admin/category/save" modelAttribute="category">
         Nazwa: <form:input placeholder="${category.name}" path="name"/><br>
+        <form:errors path="name"/><br>
         Opis: <form:textarea placeholder="${category.description}" path="description"/><br>
+        <form:errors path="description"/><br>
         <form:hidden path="id" value="${category.id}"/>
         <input type="submit" value="Save">
     </form:form>

@@ -3,7 +3,10 @@ package michalsurowiec.finalproject.categories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 //Dokonać walidacji Category Controller
 @Controller
@@ -30,7 +33,10 @@ public class CategoryController {
     }
 
     @PostMapping(path = "/save")
-    public String saveCategory(@ModelAttribute Category category){
+    public String saveCategory(@ModelAttribute("category") @Valid Category category, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "categoryForm";
+        }
         categoryService.saveCategory(category);
         return "redirect:/admin/category";
     }

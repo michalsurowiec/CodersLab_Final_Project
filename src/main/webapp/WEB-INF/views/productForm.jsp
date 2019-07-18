@@ -10,7 +10,7 @@
         <form:errors path="name"/><br>
         Opis: <form:textarea placeholder="${product.description}" path="description"/><br>
         <form:errors path="description"/><br>
-        Ean: <form:input placeholder="${product.ean}" path="ean"/><br>
+        EAN: <form:input placeholder="${product.ean}" path="ean"/><br>
         <form:errors path="ean"/><br>
         <form:select path="category">
             <form:options items="${categoryNames}" itemValue="id" itemLabel="name"/>

@@ -3,6 +3,7 @@ package michalsurowiec.finalproject.categories;
 import michalsurowiec.finalproject.products.Product;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +14,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @NotBlank
     private String name;
     private String description;
     @OneToMany(mappedBy = "category")
@@ -27,11 +28,6 @@ public class Category {
                 ", description='" + description + '\'' +
                 '}';
     }
-
-    //    @Override
-//    public String toString() {
-//        return name;
-//    }
 
     public Long getId() {
         return id;
