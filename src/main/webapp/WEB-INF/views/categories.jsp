@@ -18,7 +18,6 @@
         </tr>
 </c:forEach>
     </table>
-<a href="/admin">POWRÓT</a>
 </body>
 <%@ include file="parts/footer.jsp"%>
 </html>
