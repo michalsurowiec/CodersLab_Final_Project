@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
     <a href="/admin/product/create/">STWÓRZ PRODUKT</a>
     <table>
@@ -21,4 +22,5 @@
     </table>
     <a href="/admin">POWRÓT</a>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

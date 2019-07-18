@@ -23,19 +23,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(path = "/register")
-    public String createUser(Model model){
-        model.addAttribute("user", new User());
-        return "userForm";
-    }
-
     @PostMapping(path = "/save")
     public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "userForm";
         }
         userService.saveUser(user);
-        return "redirect:/user/register";
+        return "redirect:/";
     }
 
 }

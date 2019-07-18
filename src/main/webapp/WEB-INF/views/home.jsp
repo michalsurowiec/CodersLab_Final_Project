@@ -6,8 +6,8 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
-<sec:authorize url="/admin"><a href="/admin">PRZEJDŹ DO PANELU ADMINA</a></sec:authorize>
 <h1>OFERTA SKLEPU</h1>
 <table>
     <tr>
@@ -27,4 +27,5 @@
     </c:forEach>
 </table>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

@@ -3,8 +3,10 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
 <a href="/admin/category">ZARZĄDZANIE KATEGORIAMI</a><br>
 <a href="/admin/product">ZARZĄDZANIE PRODUKTAMI</a><br>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
 <a href="/admin/category/create/">STWÓRZ KATEGORIĘ</a>
     <table>
@@ -19,4 +20,5 @@
     </table>
 <a href="/admin">POWRÓT</a>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

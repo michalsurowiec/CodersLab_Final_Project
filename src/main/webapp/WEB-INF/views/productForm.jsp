@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
     <form:form method="post" action="/admin/product/save" modelAttribute="product">
         Nazwa: <form:input placeholder="${product.name}" path="name"/><br>
@@ -20,4 +21,5 @@
         <input type="submit" value="Save">
     </form:form>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

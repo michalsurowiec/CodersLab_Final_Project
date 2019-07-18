@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
     <form:form method="post" action="/admin/category/save" modelAttribute="category">
         Nazwa: <form:input placeholder="${category.name}" path="name"/><br>
@@ -14,4 +15,5 @@
         <input type="submit" value="Save">
     </form:form>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>

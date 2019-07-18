@@ -4,6 +4,7 @@
 <head>
     <title>Title</title>
 </head>
+<%@ include file="parts/header.jsp"%>
 <body>
     <form:form method="post" action="/user/save" modelAttribute="user">
         E-mail: <form:input placeholder="${user.email}" path="email"/><br>
@@ -29,4 +30,5 @@
         <input type="submit" value="Save">
     </form:form>
 </body>
+<%@ include file="parts/footer.jsp"%>
 </html>
