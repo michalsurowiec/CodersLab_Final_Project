@@ -12,7 +12,7 @@
 <table>
     <tr>
         <th>Nazwa produktu</th>
-        <th>Opis propduktu</th>
+        <th>Opis produktu</th>
         <th>Kategoria produktu</th>
     </tr>
     <c:forEach items="${products}" var="product">
@@ -21,7 +21,7 @@
             <td>${product.description}</td>
             <td>${product.category.name}</td>
             <sec:authorize access="isAuthenticated()">
-            <td><a href="/user/order/addProduct/<c:out value="${product.id}"/>">DODAJ DO KOSZYKA</a></td>
+            <td><a href="/cart/addProduct/<c:out value="${product.id}"/>">DODAJ DO KOSZYKA</a></td>
             </sec:authorize>
         </tr>
     </c:forEach>

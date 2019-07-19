@@ -5,5 +5,6 @@
     <sec:authorize access="!isAuthenticated()"><a href="/login">ZALOGUJ SIĘ</a></sec:authorize><br>
     <sec:authorize access="!isAuthenticated()"><a href="/register">ZAREJESTRUJ SIĘ</a></sec:authorize><br>
     <sec:authorize access="isAuthenticated()"><a href="/logout">WYLOGUJ SIĘ</a></sec:authorize><br>
+    <sec:authorize access="isAuthenticated()"><a href="/cart">KOSZYK</a></sec:authorize><br>
     <br>
 </header>
