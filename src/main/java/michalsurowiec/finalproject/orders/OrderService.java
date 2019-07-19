@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Service
 @Transactional
@@ -24,7 +25,25 @@ public class OrderService {
         } else {
             order = (Order) session.getAttribute("order");
         }
-        order.getProductSet().add(product);
-        return order;
+        boolean result = false;
+        for(Product productEach : order.getProductSet()){
+            if(productEach.getId().equals(product.getId())){
+                result = true;
+            }
+        }
+        if (result){
+            return order;
+        } else {
+            order.getProductSet().add(product);
+            return order;
+        }
+    }
+
+    public void saveProduct(Order order){
+        orderRepository.save(order);
+    }
+
+    public List<Order> findAllOrders(){
+        return orderRepository.findAll();
     }
 }

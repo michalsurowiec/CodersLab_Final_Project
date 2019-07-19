@@ -23,9 +23,6 @@ public class Order {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     private Set<Product> productSet = new HashSet<>();
-    @NotNull
-    @Min(1)
-    private int quantity;
     @ManyToOne
     private User user;
     private LocalDateTime paymentDate;
@@ -46,6 +43,15 @@ public class Order {
     public void prePersist() {
         created = LocalDateTime.now();
         paymentDate = LocalDateTime.now().plusWeeks(1);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", productSet=" + productSet +
+                ", user=" + user +
+                '}';
     }
 
     public Long getId() {
@@ -70,14 +76,6 @@ public class Order {
 
     public void setProductSet(Set<Product> productSet) {
         this.productSet = productSet;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public User getUser() {

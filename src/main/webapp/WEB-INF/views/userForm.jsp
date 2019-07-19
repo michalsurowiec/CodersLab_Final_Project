@@ -27,7 +27,7 @@
         Numer telefonu: <form:input placeholder="${user.phoneNumber}" path="phoneNumber"/><br>
         <form:errors path="phoneNumber"/><br>
         <form:hidden path="id" value="${user.id}"/>
-        <input type="submit" value="Save">
+        <input type="submit" value="Zapisz">
     </form:form>
 </body>
 <%@ include file="parts/footer.jsp"%>

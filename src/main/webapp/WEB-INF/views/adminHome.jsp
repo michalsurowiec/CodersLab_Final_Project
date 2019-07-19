@@ -7,6 +7,7 @@
 <body>
 <a href="/admin/category">ZARZĄDZANIE KATEGORIAMI</a><br>
 <a href="/admin/product">ZARZĄDZANIE PRODUKTAMI</a><br>
+<a href="/admin/order">ZARZĄDZANIE ZAMÓWIENIAMI</a><br>
 </body>
 <%@ include file="parts/footer.jsp"%>
 </html>
